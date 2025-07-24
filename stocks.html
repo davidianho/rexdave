@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5
+-->
+<html>
+	<head>
+		<title> Stock Market Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/stocks_data.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    </head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dave</span>
+								</a>
+
+							
+
+						</div>
+					</header>
+
+                <!-- Menu -->
+					<nav id="menu">
+						<h2><a href="index.html">Home</a></h2>
+					</nav>
+
+				<!-- Main -->
+                
+					<div id="main">
+						<div class="inner">
+							<span class="image main"><img src="images/European Stock Market Analysis.png" alt="" /></span>
+                
+                </head>
+                <body>
+                    <h1>Stock Market Analysis</h1>
+                
+
+                <div id="introduction" class="section">
+                    <h2> 📊 Introduction</h2>
+                    <h3>What's the idea behind this?</h3>
+                    <p>One of my long-term goals is to build as many sources of passive income as possible. One of those is owning shares in large corporations, buying stocks that will yield high returns. Achieving this requires a solid understanding of the stock market: knowing which stocks to buy and when, which ones to avoid, and the right time to sell. All of this demands strong financial knowledge. Coming from a science background, my financial knowledge has been fairly limited. But out of interest, I’ve taken the time to learn, reading various articles and watching videos on financial analysis. I’m not an expert in this field, so my analysis is based on the knowledge I’ve been able to gather so far.
+                        Since I live in Europe, it only makes sense for me to focus my financial analysis on major European corporations. As of April 2025, many large companies have been hit with massive losses, and stock prices are falling. The market is currently in turmoil, largely due to the ongoing global tariff war, which has created significant uncertainty and volatility.
+                        This analysis examines the stock performance of four leading European companies by market capitalization, as identified by Companies Market Cap (accessed April 12, 2025)
+                        I will analyze their stock performance over a ten-year period, from 2015 to 2025.</p>
+                    
+                    <div class="companies-grid">
+                        <div class="company-card sap">
+                            <h3>SAP</h3>
+                            <p>Enterprise Software Solutions</p>
+                        </div>
+                        <div class="company-card novo">
+                            <h3>Novo Nordisk</h3>
+                            <p>Pharmaceutical & Healthcare</p>
+                        </div>
+                        <div class="company-card asml">
+                            <h3>ASML</h3>
+                            <p>Semiconductor Equipment</p>
+                        </div>
+                        <div class="company-card accenture">
+                            <h3>Accenture</h3>
+                            <p>Technology Consulting</p>
+                        </div>
+                    </div>
+                
+                
+                </div>
+                
+
+                <div id="objectives" class="section">
+                    <h2>🎯 Objectives</h2>
+                    <p>This study aims to accomplish the following:</p>
+                    <ul>
+                        <li>Analyze long-term stock performance over a ten-year period (2015-2025)
+                        </li>
+                        <li>Evaluate COVID-19 impact on each company's stock price and volatility </li>
+                        <li>Compare growth trajectories between pre-COVID (2015-2019) and post-COVID (2020-2025) periods</li>
+                        <li>Determine optimal investment choices based on risk-return analysis</li>
+                    </ul>
+                    
+                </div>
+
+                <div id= "data and methodology" class = "section">
+                    <h2>📋 Data and Methodology</h2>
+                    <h3> Data Source:</h3>
+                    <li>Yahoo Finance</li>
+
+                    <h3>Analysis Tools:</h3>
+                    <ul>
+                        <li>Python programming language</li>
+                        <li>Yahoo Finance Python library</li>
+                        <li>Statistical analysis packages</li>
+                    </ul>
+                    
+                    <h3>Data Workflow</h3>
+                    <ul>
+                        <li>Import necessary Python libraries for financial analysis</li>
+                        <li>Retrieve historical stock data using Yahoo Finance API</li>
+                        <li>Conduct comprehensive exploratory data analysis (EDA)</li>
+                        <li>Perform statistical calculations and trend analysis</li>
+                    </ul>
+
+
+                </div>
+
+
+                <div id = 'data overview and preparation'>
+                    <h2>🔧 Data Overview and Preparation</h2>
+                    <h3>Import the necessary libraries</h3>
+                    <p>The first step is importing the necessary libraries we’ll use for the analysis. </p>
+                    <pre><code>#Import the neccesary libraries
+import yfinance as yf
+import pandas as pd
+import numpy as np
+import datetime
+import matplotlib.pyplot as plt
+%matplotlib inline </code></pre>
+
+                    <h3>Data Download</h3>
+                    <p>The next step is to download the data </p>
+
+                    <pre><code>#Set the time line
+from datetime import datetime
+start = datetime(2015, 1, 1)
+end   = datetime(2025, 4, 12)
+
+# Set Tickers
+Tickers = ['SAP', 'NVO', 'ASML', 'ACN']
+
+# Create a dictionary to store the data
+df = {}
+
+# Loop through tickers and download data
+for ticker in Tickers:
+    data = yf.download(ticker, start=start, end=end)
+    df[ticker] = data
+
+
+# combining the data
+stock_data = pd.concat(df, axis = 1)</code></pre>
+                </div>
+
+                <h3>Data manipulation</h3>
+                <div class="image-container">
+                    <img src="images\data_mani_stock.png">
+                </div>
+                <p>The data looks good however, the ticker are repeated at two levels. Let's keep only the topmost label and also name the columns.</p>
+                <pre><code># making the dataset cleaner
+# Droping one of the index level
+stock_data = stock_data.droplevel(2, axis = 1)
+# name the columns
+stock_data.columns.names = ['Ticker', 'Price']</code></pre>
+                <div class="image-container">
+                    <img src="images\cleaned_stock.png">
+                </div>
+                <p>Now we have a much cleaner data outlook that can easily be referenced</p>
+            
+            <div id= "exploratory data analysis" class = "section"> 
+                    <h2> 🔍 Exploratory Data Analysis</h2>
+                    <p>Next step, let’s explore the data.</p>
+                <div class="image-container">
+                    <img src="images\data_shape_stock.png">
+                </div>
+            <p>The dataset contains 2,858 rows and 20 columns across all four stocks, with no missing values detected. Each stock dataset includes five critical metrics:</p>
+            <ul>
+                <li><strong>Close Price:</strong> The closing price on each trading day (most significant for analysis)</li>
+                <li><strong>High Price:</strong> Daily maximum trading price</li>
+                <li><strong>Low Price:</strong> Daily minimum trading price</li>
+                <li><strong>Open Price:</strong> Opening price for each trading session</li>
+                <li><strong>Volume:</strong> Number of shares traded daily</li>
+            </ul>
+
+            <h3>Descriptive Statistics</h3>
+            <p>Let's check the basic descriptive analysis of the stock data and look out for any striking details</p>
+                <div class="image-container">
+                    <img src="images\Desc stat stock.png">
+                </div>
+            <p>From a general look at the descriptive statistics, ASML stands out with a high standard deviation, indicating significant fluctuations in stock prices over the years. 
+                The large gap between the maximum and minimum closing prices further emphasizes the volatility and growth ASML has experienced during the period under review.</p>
+            </div>
+
+                <div id="financial analysis" class="section">
+                    <h2>📈Financial Analysis</h2>
+                    <h3>Stock Closing Price Trends Over Time </h3>
+                    <pre><code>import plotly.express as px
+## Visualising the closing stock prices over the years.
+fig = px.line(stock_data.xs('Close', axis = 1, level = 1))
+# , color_discrete_sequence=px.colors.qualitative.Vivid
+fig.update_layout(width = 1100,
+                    height = 500,
+                    title = "Closing Stock price from Jan 2015 - April 2025",
+                    template = 'simple_white',
+                    yaxis_title = "Price",
+                    hovermode= 'x',
+                    )
+fig['data'][0]['line']['color'] = '#d00000'
+fig['data'][1]['line']['color'] = '#ffba08'
+fig['data'][2]['line']['color'] = '#3f88c5'
+fig['data'][3]['line']['color'] = '#032b43'
+fig.show()</code></pre>
+                    <div class="image-container">
+                        <img src="images\close_plot_stock (3).png">
+                    </div>
+
+                    <p>By drawing an imaginary line across the chart at the year 2020, we can clearly see changes over time. For all four companies, the impact of COVID-19 hit around March 2020, which is where we see the steepest drops in their stock prices.</p>
+    
+    <p>One standout is <strong>ASML</strong>. From the chart, it's evident that ASML's stock has been highly dynamic over the years. Specifically from 2020 onward, the stock price has experienced frequent ups and downs—showing significant volatility. But hey, no risk, no reward. Investing can be tricky; it's all about the willingness to take calculated risks. Between 2020 and August 2021, ASML went on an impressive run. Imagine holding that stock during this period—you'd have made a crazy amount of profit. Post-August 2021, however, ASML's stock has been extremely volatile and unstable.</p>
+    
+    <p><strong>Accenture</strong> had a similar trajectory. The stock enjoyed a steady rise from March 2020 through to December 2022, after which it began to dip and has since shown a pattern of fluctuation.</p>
+    
+    <p>The year <strong>2022</strong> was particularly tough for <strong>SAP</strong> investors. The stock was on a steady downward trend throughout that year, making it a difficult period for holders.</p>
+    
+    <p>Over the years, <strong>Novo Nordisk (NVO)</strong> has shown relatively stable performance. No wild spikes or sharp drops. However, from December 2021 through to December 2024, there has been a noticeable and steady rise. Holding NVO stock during this period would have likely resulted in decent profits.</p>
+
+                    <h3>Pre-covid vs Post Covid Stock Closing price</h3>
+                    <P>Let’s take a look at the numbers. We’ll divide the closing price data into two periods: pre-2020 and post-2020, and compare the descriptive statistics</P>
+
+                    <h4>Pre 2020</h4>
+                    <div class="image-container">
+                        <img src="images/close pre 2020 stock.png">
+                    </div>
+
+                    <h4>Post 2020</h4>
+                    <div class="image-container">
+                        <img src="images/close post 2020 stock.png">
+                    </div>
+
+                    <p>Looking at the figures, the data reinforces what we observed in the charts—there's been increased volatility in the stock market post-COVID. For example, the standard deviation of <strong>ASML</strong> stock prices was <strong>51.01</strong> before 2020, but it jumped to <strong>189.7</strong> after 2020. This clearly supports our earlier point: stock prices, in general, have become significantly more volatile since the onset of the pandemic.</p>
+
+                    <h3>Returns</h3>
+                    <p>Let's take a look at the returns. This essentially means measuring the percentage change in a stock's price from one day to the next. It helps us see the actual numbers—how much was gained in a single day or how much was lost. Analyzing daily returns gives us insight into the stock's short-term performance and volatility. This can be calculated with <code>pct_change()</code> in Python.</p>
+
+                    <pre><code># Calculating Returns.
+Stock_return = pd.DataFrame()
+for tick in Tickers:
+    Stock_return[tick + ' returns' ] = stock_data[tick]['Close'].pct_change()
+Stock_return.tail().style.format('{:.4f}')</code></pre>
+               
+                    
+                    <div class="image-container">
+                        <img src="images\Return stock.png">
+                    </div>
+
+                    <p>Looking at the current returns, all four companies saw gains on 4th of April 2025, with <strong>ASML</strong> gaining <strong>15%</strong>, and <strong>SAP</strong> gaining <strong>9%</strong>. However, by the following day, they all recorded losses. This clearly shows the day-to-day fluctuations and gives us a better understanding of market behavior in real-time.</p>
+    
+                    <p>We can also check the average returns to get a sense of what we might expect daily from our investments.</p>
+
+                    <div class="image-container">
+                        <img src="images\return mean stock.png">
+                    </div>
+
+                    <p>Simply put, if we had invested in <strong>ASML</strong> stock over the full period analyzed, we would have seen an average daily increase of <strong>0.1%</strong>—not bad at all, right?</p>
+    
+                    <p>Now let's take this further, let's check the returns pre-2020 and post-2020.</p>
+
+                    <div class="image-container">
+                        <img src="images\return pre 2020 stock.png">
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images\return Post 2020_stock.png">
+                    </div>
+
+                    <p>This is where it gets interesting. If you had invested in <strong>SAP, NVO, or ASML</strong> post-2020, you would have expected higher daily returns compared to investing before 2020. However, the opposite is true for <strong> ACN </strong> you would have experienced better daily returns in the five years leading up to 2020 than in the period after. Returns like these help us dive deeper into the data and make more informed investment decisions.
+                    </p>
+
+                    <h3>Worst vs Best Returns</h3>
+                    <p>Now, let’s assess the best and worst daily returns for each company. Typically, a stock’s worst-performing day is tied to a specific event or situation.
+                    </p>
+
+                    <pre><code># Check the worst singe day return for each company
+Worst_day = Stock_return.idxmin()
+
+# Check the Best singe day return for each company
+Best_day = Stock_return.idxmax()
+
+# combine the data into a data frame
+worst_and_best_return = pd.DataFrame({'worst': Worst_day, 'best': Best_day})</code></pre>
+
+                    
+                    <div class="image-container">
+                        <img src="images\worst vs best.png">
+                    </div>
+                    
+    
+        <p><strong>SAP</strong> had its worst return in the last ten years on the <strong>26th of October, 2020</strong>. This would definitely have something to do with COVID. Let's Google it. Unsurprisingly, this was related to the pandemic. On that day, SAP's stock price dropped sharply after the company cut its revenue and profit outlook due to the impact of COVID-19.</p>
+        
+        <p><strong>ASML</strong> also faced a significant dip on <strong>March 18, 2020</strong>, right in the middle of the COVID-19 market crash. Fortunately, they managed to recover after a few months, and their stock has seen impressive growth since then.</p>
+        
+        <p><strong>Novo </strong> experienced a major drop on <strong>October 20, 2024</strong>. Basically, Novo was working on a weight loss drug, CagriSema, and the result of the trial was poor, below the expectations of the company, and this affected the stock of the company. The outcome fell below expectations, negatively impacting investor confidence and, as a result, the stock price.</p>
+        
+        <p><strong>Accenture </strong> saw its worst day on <strong>March 21, 2024</strong>, after the company projected lower sales and earnings for the year. They cited an uncertain macroeconomic environment and also reported lower business bookings. These all contributed to the decline in stock value.</p>
+        
+        <p>While stock drops can often be easily traced to specific events, stock rises can be trickier to explain. Most of the time, they result from consistent growth over time, though sometimes they're driven by a key product release, a major discovery, or strategic action taken by the company.</p>
+        
+        <p><strong>ASML</strong> , for example, experienced high returns on <strong>April 9, 2025</strong>  and generally throughout the first quarter of 2025, thanks to the strong performance of their Extreme Ultraviolet (EUV) lithography systems.</p>
+        
+        <p><strong>SAP</strong>  saw a significant rise in stock on <strong> April 24, 2019 </strong> , when investor Elliott revealed a $1.3 billion stake in the company and expressed support for a new management efficiency drive.</p>
+        
+        <p><strong>Novo </strong>  shares surged on <strong> August 8, 2023</strong> , after key trial data showed that their drug Wegovy reduced the risk of heart attack or stroke by 20%.</p>
+        
+        <p>For <strong>Accenture </strong> , the best return came during the market recovery period, as the stock began to rebound when markets stabilized following an earlier downturn.</p>
+
+                        
+                <h3>Return Standard Deviation</h3>
+                <P>Next is the standard deviation of returns. This is very important in understanding the risk or volatility associated with a stock. It tells us how much the returns vary from the average return. Basically, it shows how "risky" an investment might be. A higher standard deviation means the stock’s returns are more spread out, indicating greater uncertainty and potential for both gains and losses. </P>
+
+                <div class="image-container">
+                    <img src="images\return std stock.png">
+                </div>
+
+                <p><strong>ASML</strong> has the highest standard deviation at <strong>2.34</strong>, indicating it has been the most volatile among the four. This aligns with earlier observations from the charts and return data. ASML's stock has shown wide swings in price, reflecting both high risk and high reward potential.</p>
+    
+                <p><strong>Novo Nordisk</strong> comes next with <strong>1.81</strong>. It's had a decent amount of movement too, which makes sense given all the buzz around their weight-loss drugs and medical breakthroughs. Those kinds of events can definitely shake up stock prices.</p>
+                
+                <p><strong>SAP</strong> comes in next at <strong>1.69</strong>, slightly below NVO. SAP's returns have been somewhat stable. It's still moved around a bit, especially during the pandemic, but overall it seems to be a bit more predictable.</p>
+                
+                <p><strong>Accenture (ACN)</strong> has the lowest at <strong>1.58</strong>, meaning it's been the most stable out of the four. If you prefer something a little calmer and less dramatic, ACN might feel like a safer bet.</p>
+
+           <h3>Return Standard Deviation Pre 2020 vs Post 2020</h3>
+           <p>Now lets compare the deviation pre 2020 and post 2020</p>
+
+           <div class="image-container">
+            <img src="images\std pre 2020.png">
+        </div>
+
+        <div class="image-container">
+            <img src="images/std post 2020 stock.png">
+        </div>
+           
+        <p>When you compare the numbers before and after 2020, it's clear that things got a lot more unpredictable. <strong>ASML</strong> had the biggest jump. Its volatility went from <strong>1.79</strong> to <strong>2.77</strong>, which says a lot about how wild the stock's been since the pandemic. <strong>Novo Nordisk (NVO)</strong> and <strong>SAP</strong> also got noticeably bumpier, moving from <strong>1.54</strong> to <strong>2.04</strong> and <strong>1.37</strong> to <strong>1.95</strong> respectively. Even <strong>Accenture (ACN)</strong>, which was the most stable pre-2020 at <strong>1.22</strong>, saw its standard deviation rise to <strong>1.87</strong>. Overall, it just shows how much more volatile the market's been in recent years.</p>
+        
+        <h3>Simple Moving Average</h3>
+        <p>The Simple Moving Average, or SMA, basically helps make sense of all the daily ups and downs in stock prices. It works by taking the average of a stock's closing prices over a set number of days, maybe like 20 days to give a smoother view of the overall trend. It cuts through the noise so you can clearly see if a stock is trending up, down, or just staying steady. You can use this signal to know when it might be a good time to buy or sell.</p>
+    
+        <p>Among the stocks analyzed, <strong>ASML</strong> is the most volatile. So, let's take a look at the moving average (MA) of ASML stock from January 2024 and compare it to the actual closing price.</p>
+        
+        <div class="image-container">
+            <img src="images\rollavgplot_stock (1).png">
+        </div>
+
+        <p>As you can see, the moving average gives us a cleaner view of the trend. ASML stock started 2024 on an upward trend, dipped around May, recovered until July, then began a steady decline from July onward. From December 2024, the stock has generally remained stable. Depending on your outlook, you could have sold maybe in August before the dip went deeper or even bought the dip in December if you anticipate a future upward trend.</p>
+   
+            <h>Golden Cross and Death Cross</h>
+            <p>A typical Golden Cross occurs when the short-term moving average crosses above the long-term moving average. This indicates that the market is trending upward, also known as a bull run, and is typically a signal to buy. On the other hand, a Death Cross happens when the short-term moving average crosses below the long-term moving average. This suggests that prices are declining, referred to as a bear run, and generally signals a time to sell.
+                Still looking at the ASML data, let’s examine the stock performance from January 2023 to April 2025.</p>
+            
+        <div class="image-container">
+            <img src="images\gold and death plot_stocke.png">
+        </div>
+           <p>You can see that at the end of 2023, there was a golden cross, a strong indicator of an upward trend in ASML stock. It suggested that a bull run was about to begin and could have been a signal to buy. That upward trend continued until we saw a death cross around September 2024, which has shaped the market movement since then.
+            If you look closely, the lines are starting to close in again toward the end of the chart. This could hint at an upcoming shift in the market, maybe another bull run in the coming months. If that happens, it might be a good time to consider buying.</p>
+            </div>
+
+
+
+
+            <div id="investment recommendation" class="section">
+                <h2>💡 Investment Recommendations</h2>
+                <div class="insights-grid">
+                    <div class="insight-item" style="background: rgba(46, 204, 113, 0.1); color: #27ae60;">
+                        <h4>Conservative Investors</h4>
+                        <p><strong>Accenture (ACN)</strong> - If you're a conservative investor, Accenture might be your best bet here - it's been pretty steady with low volatility, so you won't lose sleep over wild price swings.</p>
+                    </div>
+                    <div class="insight-item" style="background: rgba(136, 205, 214, 0.1); color: #be9b8cea;">
+                        <h4> Growth Seekers</h4>
+                        <p><strong>ASML</strong> - Looking for growth? ASML could be exciting if you can handle the roller coaster. It's got serious growth potential, but fair warning - it comes with some real ups and downs..</p>
+                    </div>
+                    <div class="insight-item" style="background: rgba(52, 152, 219, 0.1); color: #3498db;">
+                        <h4>Balanced Approach</h4>
+                        <p><strong>Novo Nordisk (NVO)</strong> - Want something in the middle? Novo Nordisk strikes a nice balance. You'll get decent growth without too much drama, plus they're always working on new pharmaceutical breakthroughs.</p>
+                    </div>
+                    <div class="insight-item" style="background: rgba(155, 89, 182, 0.1); color: #9b59b6;">
+                        <h4> Value Play</h4>
+                        <p><strong>SAP</strong> - SAP might be worth a look after its recent dip. Just remember, timing these things is tricky - you'll want to do your homework first.</p>
+                    </div>
+                </div>
+            </div>
+
+        <div id="conclusion" class="section">
+            <h2>💼 Conclusion</h2>
+            <p>We’ve come to the end of my nonprofessional financial analysis—lol. This ten-year review shows that the stock market has undergone significant changes, particularly increased volatility following COVID-19. While all four companies present viable investment opportunities, the choice should align with your individual risk tolerance and investment goals. Thank you!</p>
+       <!-- End -->
+        </div>
+
+        <p>
+            <strong> For the Jupyter notebook and live codes </strong>
+            <a href="https://github.com/davidianho/Stock-Market-Analysis/blob/main/Stock%20analysis%20(1).ipynb" target="_blank">here</a>.
+          </p>
+          
+
+</div>
+
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+
+    </div>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5
+-->
+<html>
+	<head>
+		<title> YouTube Marketing Campaign</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/marketing-campaign.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dave</span>
+								</a>
+
+							
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2><a href="index.html">Home</a></h2>
+					</nav>
+
+				<!-- Main -->
+                
+					<div id="main">
+						<div class="inner">
+							<span class="image main"><img src="images\Youtube image.png" alt="" /></span>
+
+                            
+                </head>
+                <body>
+                    <h1>Helping Ola</h1>
+                
+                    <!-- Navigation Icons -->
+                    <div class="nav-container">
+                        <a href="#introduction" class="nav-item">
+                            <i class="fas fa-info-circle nav-icon"></i>
+                            <span class="nav-label">Introduction</span>
+                        </a>
+                        <a href="#objectives" class="nav-item">
+                            <i class="fas fa-bullseye nav-icon"></i>
+                            <span class="nav-label">Objectives</span>
+                        </a>
+                        <a href="#data-collection" class="nav-item">
+                            <i class="fas fa-database nav-icon"></i>
+                            <span class="nav-label">Data Collection</span>
+                        </a>
+                        <a href="#project-stages" class="nav-item">
+                            <i class="fas fa-tasks nav-icon"></i>
+                            <span class="nav-label">Project Stages</span>
+                        </a>
+                        <a href="#data-analysis" class="nav-item">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            <span class="nav-label">Data Analysis</span>
+                        </a>
+                        <a href="#findings" class="nav-item">
+                            <i class="fas fa-search nav-icon"></i>
+                            <span class="nav-label">Findings</span>
+                        </a>
+                        <a href="#recommendations" class="nav-item">
+                            <i class="fas fa-lightbulb nav-icon"></i>
+                            <span class="nav-label">Recommendations</span>
+                        </a>
+                    </div>
+                
+                    <div id="introduction" class="section">
+                        <h2>Introduction</h2>
+                        <h3>Who Should Run the Ads?</h3>
+                        <p>The head of marketing wants to identify the top YouTubers in Poland in 2024 to determine which YouTuber(s) would be best suited for marketing campaigns.</p>
+                        
+                        <div class="image-container">
+                            <img src="images/question mark.png" alt="Marketing campaign concept illustration">
+                        </div>
+                    </div>
+                
+                    <div id="objectives" class="section">
+                        <h2>Objectives</h2>
+                        <h3>Key Pain Points</h3>
+                        <ul>
+                            <li>Identifying the top-performing YouTubers for marketing collaboration.</li>
+                            <li>Ensuring data-driven decision-making to maximize campaign effectiveness.</li>
+                        </ul>
+                
+                        <h3>Ideal Solution</h3>
+                        <p>To create a dashboard providing insights into the top YouTubers in Poland, including:</p>
+                        <ul>
+                            <li>Subscriber count</li>
+                            <li>Total views</li>
+                            <li>Total videos</li>
+                            <li>Engagement metrics</li>
+                        </ul>
+                        
+                    </div>
+                
+                    <div id="user-story" class="section">
+                        <h2>User Story</h2>
+                        <ul>
+                            <li>As the Head of Marketing, I want to use a dashboard analyzing YouTube channel data in Poland.</li>
+                            <li>The dashboard should highlight top-performing channels based on metrics like subscriber base and average views.</li>
+                            <li>This will enable me to make informed decisions on influencer collaborations for maximum impact.</li>
+                        </ul>
+                    </div>
+                
+                    <div id="data-collection" class="section">
+                        <h2>Data Collection</h2>
+                        <h3>Data Requirements</h3>
+                        <p>The required data includes:</p>
+                        <ul>
+                            <li>Channel names</li>
+                            <li>Total subscribers</li>
+                            <li>Total views</li>
+                            <li>Total videos uploaded</li>
+                        </ul>
+                
+                        <h3>Data Sources</h3>
+                        <ul>
+                            <li>Kaggle</li>
+                            <li>YouTube API</li>
+                        </ul>
+                    </div>
+                
+                    <div id="project-stages" class="section">
+                        <h2>Project Stages</h2>
+                        <h3>Design</h3>
+                        <h4>Dashboard Components</h4>
+                        <p>The dashboard should answer:</p>
+                        <ul>
+                            <li>Who are the top 10 YouTubers with the most subscribers?</li>
+                            <li>Which channels have uploaded the most videos?</li>
+                            <li>Which channels have the most views?</li>
+                            <li>Which channels have the highest average views per video?</li>
+                            <li>Which channels have the highest views per subscriber ratio?</li>
+                            <li>Which channels have the highest subscriber engagement rate per video uploaded?</li>
+                        </ul>
+                
+                        <h3>Development</h3>
+                        <h4>Pseudocode Approach</h4>
+                        <ol>
+                            <li>Get the data and explore it in Excel.</li>
+                            <li>Load data into SQL Server.</li>
+                            <li>Clean and test data using SQL.</li>
+                            <li>Visualize data in Power BI.</li>
+                            <li>Generate insights and documentation.</li>
+                            <li>Publish findings to GitHub Pages.</li>
+                        </ol>
+                
+                        <h3>Data Exploration</h3>
+                        <ul>
+                            <li>The dataset contains the top 100 YouTubers in Poland.</li>
+                            <li>The "Name" column includes both the channel ID and name, separated by "@".</li>
+                            <li>This "Name" column appears to be the only relevant column for the analysis.</li>
+                            <li>Extraction of channel IDs to fetch additional metrics via YouTube API.</li>
+                        </ul>
+                
+                        <div class="image-container">
+                            <img src="images/Excel Exploration.png" alt="Data exploration process visualization">
+                        </div>
+                
+                        <h3>Data Gathering via YouTube API</h3>
+                        <h4>Python Code Implementation</h4>
+                        <pre><code>import numpy as np
+                import pandas as pd
+                from googleapiclient.discovery import build
+                API_VERSION = 'v3'
+                youtube = build('youtube', API_VERSION, developerKey=API_KEY)
+                
+                
+                # Function to extract youtube metrics
+                def get_channel_stats(youtube, channel_id):
+                    request = youtube.channels().list(
+                        part='snippet, statistics',
+                        id=channel_id
+                    )
+                    response = request.execute()
+                
+                
+                    if 'items' in response and response['items']:
+                
+                
+                        data = dict(channel_name=response['items'][0]['snippet']['title'],
+                                    total_subscribers=response['items'][0]['statistics']['subscriberCount'],
+                                    total_views=response['items'][0]['statistics']['viewCount'],
+                                    total_videos=response['items'][0]['statistics']['videoCount'],
+                        )
+                
+                
+                        return data
+                    else:
+                        return None
+                
+                
+                # Read CSV into dataframe
+                df = pd.read_csv("youtube_data_poland.csv")
+                
+                
+                # Extract channel IDs and remove potential duplicates
+                channel_ids = df['NAME'].str.split('@').str[-1].unique()
+                
+                
+                # Initialize a list to keep track of channel stats
+                channel_stats = []
+                # keep track of channels returning none.
+                No_stats = []
+                
+                
+                # Loop over the channel IDs and get stats for each and keep track of channels with no stat.
+                for channel_id in channel_ids:
+                    stats = get_channel_stats(youtube, channel_id)
+                    if stats is not None:
+                        channel_stats.append(stats)
+                    else:
+                        No_stats.append(channel_id)
+                
+                
+                # Convert the list of stats to a df
+                stats_df = pd.DataFrame(channel_stats)</code></pre>
+                
+                        <p>Now that we have our data, let's check to ensure everything is okay.</p>
+                
+                        <p>Oops! There is a problem. When the data was first loaded, there were 100 entries, but now there are only 98. Some channels must have returned errors. Luckily, the code includes a provision to check for such channels.</p>
+                
+                        <pre><code># look for channel_ids with no stats from the original datasets
+                df[(df['NAME'].str.split('@').str[-1] == 'dominik%c5%81upicki') | (df['NAME'].str.split('@').str[-1] == 'UCzgVSSvfIpBbc9IrTlGKEaQ')]</code></pre>
+                
+                        <p>I investigated why these channels did not return any metrics and found that one of them, The Nitro Zyniak, has been permanently banned from YouTube for violating YouTube's terms and conditions. The other issue was due to an incorrect channel ID in the source data file. To resolve this, I searched for its metrics using the channel name. Now, I have 99 entries, which I will use for the analysis.</p>
+                    </div>
+                
+                    <div id="data-analysis" class="section">
+                        <h2>Data Analysis & Visualization</h2>
+                        <h3>Metrics and Measures</h3>
+                        <h4>DAX Measures</h4>
+                        
+                        <p><strong>Average Views per Video (M):</strong></p>
+                        <pre><code>Average views per Video (M) =
+                 var millions = 1000000
+                 var total_video = SUM(Poland_youtube[total_videos])
+                 var views = SUM(Poland_youtube[total_views])
+                 var avg = DIVIDE(DIVIDE(views,total_video, BLANK()),millions, BLANK())
+                 RETURN avg</code></pre>
+                
+                        <p><strong>Subscriber Engagement Rate:</strong></p>
+                        <pre><code>Subscriber engagement rate =
+                 var SumofTotalsubs = SUM(Poland_youtube[total_subscribers])
+                 var sumoftotalvid = SUM(Poland_youtube[total_videos])
+                 var subscriberengaement = DIVIDE(SumofTotalsubs,sumoftotalvid,BLANK())
+                 RETURN subscriberengaement</code></pre>
+                
+                        <p><strong>Total Subscribers (M):</strong></p>
+                        <pre><code>Total Subscribers (M) =
+                VAR millions = 1000000
+                var sum_of_subscribers = SUM(Poland_youtube[total_subscribers])
+                var subscribers = DIVIDE(sum_of_subscribers,millions)
+                RETURN subscribers</code></pre>
+                
+                        <p><strong>Total Views (B):</strong></p>
+                        <pre><code>Total views (B) =
+                 var billions = 1000000000
+                 var sum_of_view = SUM(Poland_youtube[total_views])
+                 var views = DIVIDE(sum_of_view, billions)
+                 return views</code></pre>
+                
+                        <p><strong>Total Videos:</strong></p>
+                        <pre><code>Total videos =
+                 var videos =  SUM(Poland_youtube[total_videos])
+                 RETURN videos</code></pre>
+                
+                        <p><strong>Views per Subscribers:</strong></p>
+                        <pre><code>view per subscriber =
+                var sumofview = SUM(Poland_youtube[total_views])
+                var sumofsubs = SUM(Poland_youtube[total_subscribers])
+                var viewpwersub = DIVIDE(sumofview,sumofsubs, BLANK())
+                RETURN viewpwersub</code></pre>
+                
+                        <h3>Dashboard</h3>
+                        <div class="image-container">
+                            <img src="images/dashboars.gif" alt="YouTube analytics dashboard">
+                        </div>
+                    </div>
+                
+                    <div id="findings" class="section">
+                        <h2>Findings</h2>
+                        <h3>Top 10 YouTubers with Most Subscribers</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Subscribers (Million)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bazylland - Tractors & Excavators</td>
+                                    <td>7.36</td>
+                                </tr>
+                                <tr>
+                                    <td>WB Kids International</td>
+                                    <td>6.47</td>
+                                </tr>
+                                <tr>
+                                    <td>Blowek</td>
+                                    <td>5.38</td>
+                                </tr>
+                                <tr>
+                                    <td>reZigiusz</td>
+                                    <td>5.17</td>
+                                </tr>
+                                <tr>
+                                    <td>Step Records</td>
+                                    <td>3.98</td>
+                                </tr>
+                                <tr>
+                                    <td>Софунья Шалунья</td>
+                                    <td>3.83</td>
+                                </tr>
+                                <tr>
+                                    <td>SBM</td>
+                                    <td>3.43</td>
+                                </tr>
+                                <tr>
+                                    <td>Cartoonito Polska</td>
+                                    <td>3.39</td>
+                                </tr>
+                                <tr>
+                                    <td>AbstrachujeTV</td>
+                                    <td>3.38</td>
+                                </tr>
+                                <tr>
+                                    <td>IsAmU</td>
+                                    <td>2.82</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Top 3 Channels by Video Uploads</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Videos Uploaded</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tvnpl</td>
+                                    <td>17,607</td>
+                                </tr>
+                                <tr>
+                                    <td>TVN Series</td>
+                                    <td>11,958</td>
+                                </tr>
+                                <tr>
+                                    <td>Polsat</td>
+                                    <td>9,904</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Top 3 Channels by Views</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Total Views (Billion)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SBM</td>
+                                    <td>5.03</td>
+                                </tr>
+                                <tr>
+                                    <td>Step Records</td>
+                                    <td>4.77</td>
+                                </tr>
+                                <tr>
+                                    <td>Śpiewające Brzdące - Piosenki dla dzieci</td>
+                                    <td>4.10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Top 3 Channels by Average Views per Video</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Average Views per Video (Million)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>JuzzyGamePlay</td>
+                                    <td>37.21</td>
+                                </tr>
+                                <tr>
+                                    <td>Sobel</td>
+                                    <td>16.36</td>
+                                </tr>
+                                <tr>
+                                    <td>MINIVEVO</td>
+                                    <td>12.76</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Top 3 Channels by Views per Subscriber Ratio</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Average Views per Subscriber</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MINIVEVO</td>
+                                    <td>1,720.8</td>
+                                </tr>
+                                <tr>
+                                    <td>Śpiewające Brzdące - Piosenki dla dzieci</td>
+                                    <td>1,678.85</td>
+                                </tr>
+                                <tr>
+                                    <td>tvnpl</td>
+                                    <td>1,537.71</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Top 3 Channels by Subscriber Engagement Rate per Video Uploaded</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Channel Name</th>
+                                    <th>Subscriber Engagement Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DISCO MAREK</td>
+                                    <td>355,714.29</td>
+                                </tr>
+                                <tr>
+                                    <td>JuzzyGamePlay</td>
+                                    <td>112,380.95</td>
+                                </tr>
+                                <tr>
+                                    <td>Диана Милканова</td>
+                                    <td>37,142.86</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <p><strong>Notes:</strong> Analysis will be prioritized. We'll prioritize analyzing the metrics that are important in generating the expected ROI for our marketing client, focusing on YouTube channels with the most subscribers, total views, and videos uploaded.</p>
+                    </div>
+                
+                    <div id="validation" class="section">
+                        <h2>Validation</h2>
+                        <h3>Profitability Analysis</h3>
+                        <h4>Youtubers with the Most Subscribers</h4>
+                        <p><strong>Calculation Breakdown</strong></p>
+                        <p>Campaign idea = product placement</p>
+                
+                        <div class="highlight">
+                            <h4>Bazylland - Tractors & Excavators</h4>
+                            <ul>
+                                <li>Average views per video = 3.73 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 3.73 million × 2% conversion rate = 74,600 units sold</li>
+                                <li>Potential revenue per video = 74,600 × 20 PLN = 1,492,000 PLN</li>
+                                <li>Campaign cost (one-time fee) = 100,000 PLN</li>
+                                <li>Net profit = 1,492,000 PLN - 100,000 PLN = 1,392,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>WB Kids International</h4>
+                            <ul>
+                                <li>Average views per video = 1.60 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 1.60 million × 2% conversion rate = 32,000 units sold</li>
+                                <li>Potential revenue per video = 32,000 × 20 PLN = 640,000 PLN</li>
+                                <li>Campaign cost (one-time fee) = 100,000 PLN</li>
+                                <li>Net profit = 640,000 PLN - 100,000 PLN = 540,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>Blowek</h4>
+                            <ul>
+                                <li>Average views per video = 0.70 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 0.70 million × 2% conversion rate = 14,000 units sold</li>
+                                <li>Potential revenue per video = 14,000 × 20 PLN = 280,000 PLN</li>
+                                <li>Campaign cost (one-time fee) = 100,000 PLN</li>
+                                <li>Net profit = 280,000 PLN - 100,000 PLN = 180,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                        <h4>SQL Query</h4>
+                        <pre><code>
+            /*
+            # 1. Define variables
+            # 2. Create a CTE that rounds the average views per video
+            # 3. Select the columns you need and create calculated columns from existing ones
+            # 4. Filter results by YouTube channels
+            # 5. Sort results by net profits (from highest to lowest)
+            */
+            
+            
+            
+            
+            -- 1.
+            DECLARE @conversionRate FLOAT = 0.02;           -- The conversion rate @ 2%
+            DECLARE @productCost FLOAT = 20.0;               -- The product cost @ 20 PLN
+            DECLARE @campaignCostPerVideo FLOAT = 10000.0;   -- The campaign cost per video @ 10,000 PLN
+            DECLARE @numberOfVideos INT = 10;               -- The number of videos (10)
+            
+            
+            
+            
+            -- 2.
+            WITH ChannelData AS (
+                SELECT
+                    channel_name,
+                    total_views,
+                    total_videos,
+                    ROUND((CAST(total_views AS FLOAT) / total_videos), -4) AS rounded_avg_views_per_video
+                FROM
+                    PoleYoutube
+            )
+            
+            
+            
+            
+            -- 3.
+            SELECT
+                channel_name,
+                rounded_avg_views_per_video,
+                (rounded_avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
+                (rounded_avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
+                ((rounded_avg_views_per_video * @conversionRate * @productCost) - (@campaignCostPerVideo * @numberOfVideos)) AS net_profit
+            FROM
+                ChannelData
+            
+            
+            
+            
+            -- 4.
+            WHERE
+                channel_name IN ('tvnpl', 'TVN Series', 'Polsat')
+            
+            
+            
+            
+            -- 5.
+            ORDER BY
+                net_profit DESC;</code></pre>
+
+                <div class="image-container">
+                    <img src="images/profit 1.png" alt="SQL output">
+                </div>
+                
+                        <h4>Youtubers with the Most Videos Uploaded</h4>
+                        <p><strong>Calculation Breakdown</strong></p>
+                        <p>Campaign Idea: Sponsored Video Series</p>
+                
+                        <div class="highlight">
+                            <h4>Channel: tvnpl</h4>
+                            <ul>
+                                <li>Average views per video = 220,000</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 220,000 × 2% = 4,400 units</li>
+                                <li>Potential revenue per video = 4,400 × 20 PLN = 88,000 PLN</li>
+                                <li>Campaign cost (10 videos @ 10,000 PLN each) = 100,000 PLN</li>
+                                <li>Net profit = 88,000 - 100,000 = -12,000 PLN (potential loss)</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>Channel: TVN Series</h4>
+                            <ul>
+                                <li>Average views per video = 130,000</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 130,000 × 2% = 2,600 units</li>
+                                <li>Potential revenue per video = 2,600 × 20 PLN = 52,000 PLN</li>
+                                <li>Campaign cost (10 videos @ 10,000 PLN each) = 100,000 PLN</li>
+                                <li>Net profit = 52,000 - 100,000 = -48,000 PLN (potential loss)</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>Channel: Polsat</h4>
+                            <ul>
+                                <li>Average views per video = 220,000</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 220,000 × 2% = 4,400 units</li>
+                                <li>Potential revenue per video = 4,400 × 20 PLN = 88,000 PLN</li>
+                                <li>Campaign cost (10 videos @ 10,000 PLN each) = 100,000 PLN</li>
+                                <li>Net profit = 88,000 - 100,000 = -12,000 PLN (potential loss)</li>
+                            </ul>
+                        </div>
+                
+                        
+
+                        <h4>SQL Query</h4>
+                        <pre><code>
+                
+            /*
+            # 1. Define variables
+            # 2. Create a CTE that rounds the average views per video
+            # 3. Select the columns you need and create calculated columns from existing ones
+            # 4. Filter results by YouTube channels
+            # 5. Sort results by net profits (from highest to lowest)
+            */
+            
+            
+            -- 1.
+            DECLARE @conversionRate FLOAT = 0.02;           -- The conversion rate @ 2%
+            DECLARE @productCost FLOAT = 20.0;               -- The product cost @ 20 PLN
+            DECLARE @campaignCostPerVideo FLOAT = 10000.0;   -- The campaign cost per video @ 10,000 PLN
+            DECLARE @numberOfVideos INT = 10;               -- The number of videos (10)
+            
+        
+            -- 2.
+            WITH ChannelData AS (
+                SELECT
+                    channel_name,
+                    total_views,
+                    total_videos,
+                    ROUND((CAST(total_views AS FLOAT) / total_videos), -4) AS rounded_avg_views_per_video
+                FROM
+                    PoleYoutube
+            )
+        
+            -- 3.
+            SELECT
+                channel_name,
+                rounded_avg_views_per_video,
+                (rounded_avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
+                (rounded_avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
+                ((rounded_avg_views_per_video * @conversionRate * @productCost) - (@campaignCostPerVideo * @numberOfVideos)) AS net_profit
+            FROM
+                ChannelData
+            
+            -- 4.
+            WHERE
+                channel_name IN ('tvnpl', 'TVN Series', 'Polsat')
+            
+            
+            -- 5.
+            ORDER BY
+                net_profit DESC; </code></pre>
+
+                <div class="image-container">
+                    <img src="images/profit 2.png" alt="SQL output">
+                </div>
+                
+                        <h4>Youtubers with the Most Views</h4>
+                        <p><strong>Calculation Breakdown</strong></p>
+                        <p>Campaign Idea: Influencer Marketing</p>
+                
+                        <div class="highlight">
+                            <h4>Channel: SBM</h4>
+                            <ul>
+                                <li>Average views per video = 3.01 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 3.01 million × 2% = 60,200 units</li>
+                                <li>Potential revenue per video = 60,200 × 20 PLN = 1,204,000 PLN</li>
+                                <li>Campaign cost (3-month contract) = 200,000 PLN</li>
+                                <li>Net profit = 1,204,000 - 200,000 = 1,004,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>Channel: Step Records</h4>
+                            <ul>
+                                <li>Average views per video = 1.67 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 1.67 million × 2% = 33,400 units</li>
+                                <li>Potential revenue per video = 33,400 × 20 PLN = 668,000 PLN</li>
+                                <li>Campaign cost (3-month contract) = 200,000 PLN</li>
+                                <li>Net profit = 668,000 - 200,000 = 468,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                        <div class="highlight">
+                            <h4>Channel: Śpiewające Brzdące - Piosenki dla dzieci</h4>
+                            <ul>
+                                <li>Average views per video = 5.9 million</li>
+                                <li>Product cost = 20 PLN</li>
+                                <li>Potential units sold per video = 5.9 million × 2% = 118,000 units</li>
+                                <li>Potential revenue per video = 118,000 × 20 PLN = 2,360,000 PLN</li>
+                                <li>Campaign cost (3-month contract) = 200,000 PLN</li>
+                                <li>Net profit = 2,360,000 - 200,000 = 2,160,000 PLN</li>
+                            </ul>
+                        </div>
+                
+                       
+                    </div>
+
+                    <h4>SQL Query</h4>
+                        <pre><code>
+                
+            /*
+            # 1. Define variables
+            # 2. Create a CTE that rounds the average views per video
+            # 3. Select the columns you need and create calculated columns from existing ones
+            # 4. Filter results by YouTube channels
+            # 5. Sort results by net profits (from highest to lowest)
+            */
+            
+            -- 1.
+            DECLARE @conversionRate FLOAT = 0.02;        -- The conversion rate @ 2%
+            DECLARE @productCost MONEY = 20.0;            -- The product cost @ 20 PLN
+            DECLARE @campaignCost MONEY = 200000.0;      -- The campaign cost @ 200,000 PLN
+            
+            
+            -- 2.
+            WITH ChannelData AS (
+                SELECT
+                    channel_name,
+                    total_views,
+                    total_videos,
+                    ROUND(CAST(total_views AS FLOAT) / total_videos, -4) AS avg_views_per_video
+                FROM
+                    PoleYoutube
+            )
+            
+            -- 3.
+            SELECT
+                channel_name,
+                avg_views_per_video,
+                (avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
+                (avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
+                (avg_views_per_video * @conversionRate * @productCost) - @campaignCost AS net_profit
+            FROM
+                ChannelData
+            
+            
+            -- 4.
+            WHERE
+                channel_name IN ('SBM', 'Step Records', N'Śpiewające Brzdące - Piosenki dla dzieci')
+            
+            
+            -- 5.
+            ORDER BY
+                net_profit DESC; </code></pre>
+
+                <div class="image-container">
+                    <img src="images/profit 3.png" alt="SQL output">
+                </div>
+                
+                    <div id="recommendations" class="section">
+                        <h2>Discovery and Recommendations</h2>
+                        <h3>Key Insights</h3>
+    
+                        </div>
+                        <div class="highlight">
+                            <ul>
+                                <li><strong>Entertainment and Music</strong> channels drive the most engagement.</li>
+                                <li><strong>Kids' content</strong> dominates the top YouTube channels in Poland.</li>
+                                <li>Some channels with strong metrics may not be ideal for recommendation, as they cater more to kids rather than adults, who are our target market.</li>
+                            </ul>
+                        </div>
+                
+                        <h3>Recommendations</h3>
+                        <div class="highlight">
+                            <ul>
+                                <li><strong>Caution with TV Networks:</strong> tvnpl, TVN Series, and Polsat post regularly but may not yield high returns.</li>
+                                <li><strong>Maximizing Visibility:</strong> Blowek is the best channel for collaboration to maximize visibility, as it has one of the highest subscriber counts in Poland and targets an adult audience.</li>
+                                <li><strong>Maximizing Reach:</strong> SBM stands out as an excellent channel for maximizing reach, consistently ranking among the top 10 in subscriber count and boasting high engagement with its content. Similarly, Step Records is alo a great option as their videos enjoy frequent engagement and as well have a large subscriber base.</li>
+                                <li><strong>Top 3 Recommended Channels for Collaboration:</strong> SSBM, Step Records, and Blowek.</li>
+							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+						</div>
+
+                        <h3>Potential ROI </h3>
+                        <div class="highlight">
+                            <ul>
+                                <li>An influencer marketing contract with SBM could generate a net profit of 1,004,000 PLN for the client</li>
+                                <li>A collaboration with Step Records could also be profitable, with an estimated net profit of 468,000 PLN.</li>
+                                <li>Partnering with Blowek would yield a net profit of 180,000 PLN per video, making it a strong option for targeted visibility.</li>
+                        
+                            <!-- End -->
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+		
+						</div>
+					</footer>
+
+                    <p>
+                        <strong> For the Jupyter notebook and csv file </strong>
+                        <a href="https://github.com/davidianho/Youtube-Marketing-Campaign" target="_blank">here</a>.
+                      </p>
+
+                    
+                      <p>
+                        <strong> For view the live Power BI dash board </strong>
+                        <a href="https://app.powerbi.com/groups/me/reports/ea136e21-242c-4c79-a138-941bda15e896/afc1294c29eed7c7200c?experience=power-bi" target="_blank">here</a>.
+                      </p>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
