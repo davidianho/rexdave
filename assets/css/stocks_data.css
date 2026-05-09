@@ -38,15 +38,17 @@ ul, ol {
 }
 
 pre {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 5px;
+    background: #111827;
+    color: #f9fafb;
+    padding: 18px;
+    border-radius: var(--radius);
     overflow-x: auto;
+    box-shadow: var(--shadow);
 }
 
 code {
-    font-family: 'Courier New', Courier, monospace;
-    color: #e74c3c;
+    font-family: 'Fira Code', monospace;
+    color: #38bdf8;
 }
 
 table {
