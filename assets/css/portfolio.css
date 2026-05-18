@@ -227,6 +227,23 @@
       color: var(--text);
     }
 
+.card-tools {
+  position: absolute; bottom: 12px; right: 14px;
+  display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px;
+  max-width: 70%
+}
+
+.card-tool-chip {
+  background: rgba(180, 170, 170, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--text);
+}
+
     .card-body {
       padding: 1.5rem;
       display: flex; flex-direction: column; gap: 0.6rem;
