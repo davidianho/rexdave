@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Fitness Dashboard – Power BI Project</title>
+
+  <!-- Link your portfolio CSS here -->
+  <link rel="stylesheet" href="assets/css/stocks_data.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
+<body class="is-preload">
+
+  <!-- ═══════════════════════════════ HEADER ══════════════════════════════════ -->
+  <div id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="Logo" /></span>
+        <span class="title">Dave</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ WRAPPER ═════════════════════════════════ -->
+  <div id="wrapper">
+    <div class="content">
+
+      <h1>Sky Fitness Dashboard</h1>
+
+      <!-- ── NAV ICONS ──────────────────────────────────────────────────────── -->
+      <div class="nav-container">
+        <a href="#overview" class="nav-item">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Overview</span>
+        </a>
+        <a href="#requirements" class="nav-item">
+          <span class="nav-icon">📋</span>
+          <span class="nav-label">Requirements</span>
+        </a>
+        <a href="#data" class="nav-item">
+          <span class="nav-icon">🗃️</span>
+          <span class="nav-label">Data</span>
+        </a>
+        <a href="#transformation" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Transformation</span>
+        </a>
+        <a href="#screenshots" class="nav-item">
+          <span class="nav-icon">🖼️</span>
+          <span class="nav-label">Screenshots</span>
+          </a>
+        <a href="#calculator" class="nav-item">
+          <span class="nav-icon">🧮</span>
+          <span class="nav-label">Calculator</span>
+        </a>
+        <a href="#insights" class="nav-item">
+          <span class="nav-icon">💡</span>
+          <span class="nav-label">Insights</span>
+        </a>
+      </div>
+
+
+      <!-- ═══════════════════════════ OVERVIEW ════════════════════════════════ -->
+      <div id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>
+          The Sky Fitness Dashboard is an end-to-end business intelligence solution built in
+          <strong>Microsoft Power BI</strong> for a gym and fitness management business. The project
+          transformed a manually operated reporting process into a fully automated, interactive
+          dashboard delivering real-time visibility across all key areas of the business.
+        </p>
+
+        <div class="highlight">
+          <strong>Goal:</strong> Replace manual gym reporting with a centralized, interactive
+          dashboard that enables faster, data-driven decisions across operations, finance,
+          membership management, and member health tracking.
+        </div>
+
+        <h3>Dashboard Modules</h3>
+        <ul>
+          <li>📈 Business performance &amp; KPI monitoring</li>
+          <li>📅 Monthly financial trend analysis</li>
+          <li>🏅 Membership status tracking &amp; retention management</li>
+          <li>🧮 Interactive fitness &amp; health calculator</li>
+          <li>👤 Individual member profile views</li>
+        </ul>
+      </div>
+
+
+      <!-- ════════════════════════ BUSINESS REQUIREMENTS ══════════════════════ -->
+      <div id="requirements" class="section">
+        <h2>Business Requirements</h2>
+
+        <h3>1. Overall Business Performance</h3>
+        <p>
+          The gym previously relied on manual summaries to monitor key operational metrics.
+          The dashboard automates and visualizes these in a single centralized view:
+        </p>
+        <ul>
+          <li>Total number of clients/members and trainers</li>
+          <li>Total revenue generated</li>
+          <li>Total expenses incurred</li>
+          <li>Total profit earned</li>
+        </ul>
+
+        <h3>2. Monthly Performance Tracking</h3>
+        <p>Management required monthly trend analysis for financial and operational metrics:</p>
+        <ul>
+          <li>Monthly member acquisition trends</li>
+          <li>Monthly revenue, expenses, and profit</li>
+          <li>Revenue vs. expenses comparison visuals</li>
+          <li>Profit trend analysis over time</li>
+        </ul>
+
+        <h3>3. Membership Status Tracking</h3>
+        <p>
+          To improve customer retention, the dashboard tracks active and expired memberships
+          across all tiers — Platinum, Gold, and Silver — and provides quick visibility into:
+        </p>
+        <ul>
+          <li>Active vs. expired member counts per tier</li>
+          <li>Expiring and cancelled memberships</li>
+          <li>Membership progress indicators</li>
+        </ul>
+
+        <h3>4. Interactive Fitness &amp; Health Calculator</h3>
+        <p>
+          An interactive fitness calculator was built directly into the dashboard. Users input
+          their age, weight, height, gender, and activity level to receive dynamic, personalized
+          calculations for:
+        </p>
+        <ul>
+          <li><strong>BMI</strong> – Body Mass Index</li>
+          <li><strong>BMR</strong> – Basal Metabolic Rate</li>
+          <li><strong>TDEE</strong> – Total Daily Energy Expenditure</li>
+          <li>Calorie targets for weight maintenance and weight loss</li>
+        </ul>
+
+        <h3>5. Member Detailed Profile</h3>
+        <p>Each member has a dedicated profile view providing a centralized record of:</p>
+        <ul>
+          <li>Personal information and assigned trainer</li>
+          <li>Membership type, start date, and expiry</li>
+          <li>Fitness goals, current BMI, and membership status</li>
+          <li>Progress indicators</li>
+        </ul>
+      </div>
+
+
+      <!-- ════════════════════════ DATASET OVERVIEW ═══════════════════════════ -->
+      <div id="data" class="section">
+        <h2>Dataset Overview</h2>
+        <p>
+          The project was built on a gym management dataset consisting of
+          <strong>three Excel worksheets</strong>:
+        </p>
+
+        <h3>Users Sheet — Member Profiles &amp; Fitness Data</h3>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>UserID</td><td>Unique identifier for each member</td></tr>
+            <tr><td>UserName</td><td>Full name</td></tr>
+            <tr><td>Age / Gender</td><td>Demographic attributes</td></tr>
+            <tr><td>JoinDate</td><td>Date of gym registration</td></tr>
+            <tr><td>MembershipType</td><td>Platinum, Gold, or Silver</td></tr>
+            <tr><td>MembershipStart / MembershipEnd</td><td>Subscription period</td></tr>
+            <tr><td>Goal</td><td>Member's stated fitness objective</td></tr>
+            <tr><td>TrainerName</td><td>Assigned personal trainer</td></tr>
+            <tr><td>Height_cm / StartingWeight</td><td>Physical measurements at onboarding</td></tr>
+            <tr><td>BMI</td><td>Body Mass Index at time of joining</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Payments Sheet — Member Revenue Tracking</h3>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>UserID</td><td>Links payment record to member</td></tr>
+            <tr><td>PaymentDate</td><td>Date of transaction</td></tr>
+            <tr><td>Amount</td><td>Payment value</td></tr>
+            <tr><td>Payment Mode</td><td>Cash, card, bank transfer, etc.</td></tr>
+            <tr><td>Payment Status</td><td>Completed, pending, or failed</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Expenses Sheet — Operational Cost Tracking</h3>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Date</td><td>Date of expense</td></tr>
+            <tr><td>ExpenseType</td><td>Category (rent, equipment, utilities, etc.)</td></tr>
+            <tr><td>Amount</td><td>Expense value</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ══════════════════════ DATA TRANSFORMATION ═══════════════════════════ -->
+      <div id="transformation" class="section">
+        <h2>Data Preparation &amp; Transformation</h2>
+
+        <h3>1. Data Quality Checks</h3>
+        <p>
+          Before importing into Power BI, the dataset was reviewed in Excel to identify and
+          resolve missing values, incorrect data types, duplicate records, and inconsistent
+          entries.
+        </p>
+
+        <h3>2. Dynamic Membership Status Column</h3>
+        <p>
+          The original status column was static and did not update over time. A new DAX
+          calculated column was created to make membership status dynamic:
+        </p>
+        <pre><code>Status =
+IF(
+    Users[MembershipEnd] &lt; TODAY(),
+    "Expired",
+    "Active"
+)</code></pre>
+        <p>
+          This ensures statuses automatically reflect the current date every time the report is
+          refreshed.
+        </p>
+
+        <h3>3. Calendar Table</h3>
+        <p>
+          A dedicated calendar table was created to support time intelligence functions and
+          monthly trend analysis:
+        </p>
+        <p>
+          Additional columns were added for month names, month numbers, and quarters to enable
+          flexible time-based filtering.
+        </p>
+
+        <h3>4. Data Modeling &amp; Relationships</h3>
+        <p>
+          A <strong>star schema</strong> model was built by establishing relationships between
+          the four tables:
+        </p>
+        <ul>
+          <li>Users table (dimension)</li>
+          <li>Payments table (fact)</li>
+          <li>Expenses table (fact)</li>
+          <li>Calendar table (date dimension)</li>
+        </ul>
+
+        <h3>5. Supporting Tables</h3>
+
+        <h4>Min/Max Switch Table</h4>
+        <p>
+          Enables users to toggle chart highlighting between the highest and lowest performing
+          months, making it easy to identify best and worst periods at a glance.
+        </p>
+
+
+        <h4>Measure Table</h4>
+        <p>
+          Created to centralize and organize all measures used throughout the report.
+        </p>
+
+        <h4>Activity Slider Table</h4>
+        <p>
+          A static DATATABLE was built to power the activity level selector in the fitness
+          calculator
+        </p>
+
+        <h4> Refresh Table</h4>
+        <p>
+         Built to track the exact time of the report's latest data refresh.
+        </p>
+
+      </div>
+
+
+<!-- ═══════════════════════ DASHBOARD SCREENSHOTS ══════════════════════════ -->
+<div id="screenshots" class="section">
+  <h2>Dashboard Screenshots</h2>
+  <p>
+    The following screenshots showcase the key pages of the Sky Fitness Dashboard
+    built in Microsoft Power BI.
+  </p>
+
+  <h3>Overview Page</h3>
+  <div class="screenshot-container">
+    <img src="images\FItness Dashboard\Overalll Dashboard.png" alt="Sky Fitness Dashboard – Overview Page" />
+  </div>
+
+  <h3>Calculator Page</h3>
+  <div class="screenshot-container">
+    <img src="images\FItness Dashboard\Calculator.gif" alt="Sky Fitness Dashboard – Calculator" />
+  </div>
+
+  <h3>Members Page</h3>
+  <div class="screenshot-container">
+    <img src="images\FItness Dashboard\Members Page.png" alt="Sky Fitness Dashboard – Members" />
+  </div>
+
+</div>
+
+
+      <!-- ═══════════════════════ FITNESS CALCULATOR ═══════════════════════════ -->
+      <div id="calculator" class="section">
+        <h2>Interactive Fitness Calculator</h2>
+        <p>
+          Power BI parameters were created to allow users to dynamically input their personal
+          data. These feed into DAX measures that calculate four key fitness metrics in real
+          time.
+        </p>
+
+        <h3>BMI — Body Mass Index</h3>
+        <pre><code>BMI = Weight (kg) / [Height (m)]²</code></pre>
+
+        <h3>BMR — Basal Metabolic Rate</h3>
+        <p>BMR is calculated differently by gender (Mifflin–St Jeor equation):</p>
+        <pre><code>Men:   (10 × weight kg) + (6.25 × height cm) − (5 × age) + 5
+Women: (10 × weight kg) + (6.25 × height cm) − (5 × age) − 161</code></pre>
+
+        <h3>TDEE — Total Daily Energy Expenditure</h3>
+        <pre><code>TDEE = BMR × Activity Factor</code></pre>
+
+        <h3>Case Study: Ellen</h3>
+        <p>
+          Ellen is a 25-year-old woman, 1.5 m tall, weighing 70 kg, with a sedentary lifestyle.
+          Here are her calculator outputs:
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>Result</th><th>Interpretation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>BMI</td><td><strong>31.1</strong></td><td>Obese range (≥ 30)</td></tr>
+            <tr><td>BMR</td><td><strong>1,352 kcal/day</strong></td><td>Calories burned at complete rest</td></tr>
+            <tr><td>TDEE (Sedentary)</td><td><strong>1,623 kcal/day</strong></td><td>Maintenance calories at current activity</td></tr>
+            <tr><td>Weight Loss Target</td><td><strong>1,380 kcal/day</strong></td><td>Moderate caloric deficit</td></tr>
+            <tr><td>Extreme Weight Loss</td><td><strong>1,100 kcal/day</strong></td><td>Aggressive deficit — use with caution</td></tr>
+          </tbody>
+        </table>
+
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Ellen CaseStudy.png" alt="Sky Fitness Dashboard – Ellen Fitness" />
+        </div>
+
+        <div class="highlight">
+          Ellen's results show how the calculator helps members understand exactly how many
+          calories they need to reach their goals — and how introducing even light physical
+          activity meaningfully increases metabolic flexibility and dietary room.
+        </div>
+      </div>
+
+
+      <!-- ═══════════════════════ KEY INSIGHTS ════════════════════════════════ -->
+      <div id="insights" class="section">
+        <h2>Key Findings &amp; Insights</h2>
+
+        <h3>Annual Financial Summary</h3>
+        
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Total Revenue</td><td><strong>$4.1M</strong></td></tr>
+            <tr><td>Total Expenses</td><td><strong>$1.2M</strong></td></tr>
+            <tr><td>Net Profit</td><td><strong>$2.9M</strong> (71% margin)</td></tr>
+          </tbody>
+        </table>
+        
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Overall Financial Outlook.png" alt="Sky Fitness Dashboard – Financial Outlook" />
+        </div>
+
+        <h3>Monthly Performance</h3>
+        <p>
+          <strong>November</strong> was the strongest month of the year — 19 active members,
+          $680K in revenue, and $624K in profit, making it the peak period across all
+          three metrics.
+        </p>
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Heighest Revenue..png" alt="Sky Fitness Dashboard – Financial Outlook" />
+        </div>
+        <p>
+          <strong>March and April</strong> were the weakest months. March recorded only 5
+          members and April 7, with both generating $230K in revenue. April posted the lowest
+          profit at $110K due to higher relative expenses.
+        </p>
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Lowest Revenue.png" alt="Sky Fitness Dashboard – Financial Outlook" />
+        </div>
+        <div class="highlight">
+          The November-to-March variance is a significant operational signal. Management should
+          investigate whether this reflects seasonality, marketing gaps, or structural issues
+          in member retention and acquisition.
+        </div>
+
+        <h3>Membership Breakdown</h3>
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Active</th><th>Expired</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Platinum</td><td>7</td><td>26</td></tr>
+            <tr><td>Gold</td><td>13</td><td>22</td></tr>
+            <tr><td>Silver</td><td>10</td><td>22</td></tr>
+          </tbody>
+        </table>
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Memebers By Type.png" alt="Sky Fitness Dashboard – members Outlook" />
+        </div>
+        <p>
+          Across all tiers, expired memberships significantly outnumber active ones. This
+          points to a substantial retention opportunity and suggests the gym would benefit
+          from a structured renewal outreach programme.
+        </p>
+
+        <h3>Member Demographics</h3>
+        <p>
+          The <strong>40–60 age group accounts for 53%</strong> of total gym membership —
+          an atypical profile for a fitness facility, which usually skews younger.
+        </p>
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Members By Gender.png" alt="Sky Fitness Dashboard – members Outlook" />
+        </div>
+        <div class="image-container">
+        <img src="images\FItness Dashboard\Members BY Status.png" alt="Sky Fitness Dashboard – Financial Outlook" />
+        </div>
+        <div class="highlight">
+          This warrants further investigation: is the gym actively attracting older adults
+          through targeted programming, or are there barriers — pricing, culture, or
+          scheduling — discouraging younger members from joining or staying? Older male
+          members currently hold the highest proportion of active memberships, making them
+          the gym's most engaged demographic segment.
+        </div>
+
+
+         <div class="pfooter fade">
+      <div class="flinks">
+  
+        <a class="fbtn" href="https://github.com/davidianho/Youtube-Marketing-Campaign" target="_blank">
+          <i class="fab fa-github"></i> Notebook &amp; CSV
+        </a>
+        <a class="fbtn" href="https://app.powerbi.com/groups/me/reports/b693666b-413d-4942-bfc9-beefe9b26296?ctid=c715e6ac-7770-4e32-8741-3be9759766f0&pbi_source=linkShare" target="_blank">
+          <i class="fas fa-chart-pie"></i> Live Power BI Dashboard
+        </a>
+        <a class="fbtn" href="index.html">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </div>
+
+        
+
+    </div><!-- /.content -->
+  </div><!-- /#wrapper -->
+
+</body>
+</html>
