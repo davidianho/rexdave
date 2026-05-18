@@ -260,3 +260,56 @@ nav ul li a:hover {
         padding: 8px;
     }
 }
+screenshot-container {
+  margin: 1rem 0 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.screenshot-container img {
+  width: 100%;
+  display: block;
+}
+
+
+/* ── PROJECT FOOTER ── */
+.pfooter {
+    border-top: 1px solid #cbd5e1;
+    padding: 2.5rem 20px;
+    margin-top: 4rem;
+    max-width: 1200px;
+}
+
+.flinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.fbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f4f5f8fa;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0.58rem 1.15rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.fbtn:hover {
+    color: #3b82f6;
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: translateY(-2px);
+}
+
+.fbtn i {
+    font-size: 0.82rem;
+}
