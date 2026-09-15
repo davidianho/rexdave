@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wave Electronics 2020 Revenue Dashboard</title>
+
+    <link rel="stylesheet" href="assets/css/stocks_data.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="is-preload">
+
+    <header id="header">
+        <div class="inner">
+
+            <a href="index.html" class="logo">
+                <span class="symbol">
+                    <img src="images/logo.svg" alt="Logo">
+                </span>
+
+                <span class="title">Dave</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main id="wrapper">
+
+        <div class="content">
+
+            <!-- Hero -->
+            <section class="hero">
+
+                <div class="hero-inner">
+
+                    <h1>Diagnosing Wave Electronics' 2020 Revenue Shortfall</h1>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="wrap">
+
+                <!-- Business Problem -->
+                <section id="problem">
+
+                    <h2>Business problem</h2>
+
+                    <h3 class="title">
+                        A sharp drop in sales and revenue, with no clear view of why
+                    </h3>
+
+                    <p class="body-text">
+                        Wave Electronics recorded a significant fall in revenue in 2020. 
+                        Business executives needed a simple,
+                        interactive dashboard that could compare 2020 performance
+                        against the previous year at a glance, identify the
+                        countries, products and time periods responsible for the
+                        decline, and surface potential revenue opportunities
+                        so leadership could make informed decisions quickly,
+                        without digging through raw data.
+                    </p>
+
+                </section>
+
+
+                <!-- Executive Questions -->
+                <section id="questions">
+
+                    <h2>Executive questions</h2>
+
+                    <h3 class="title">
+                        The dashboard was designed around five questions
+                    </h3>
+
+                    <ul class="q-list">
+
+                        <li>
+                            
+                                How did the business perform in 2020 compared
+                                with the previous year?
+
+                        </li>
+
+                        <li>
+                                Which countries contributed most to revenue,
+                                and where did performance decline?
+                        </li>
+
+                        <li>
+                                When did revenue performance begin to deteriorate?
+                        </li>
+
+                        <li>
+                                Which products generated the most revenue,
+                                and which experienced the largest decline?
+                        </li>
+
+                        <li>
+                                How much potential revenue is being missed from
+                                products that generated no sales?
+                        </li>
+
+                    </ul>
+
+                </section>
+ <!-- Dashboard OVERVIEW -->
+<section id="Dash"> 
+    
+    </section>
+                <h2>General Dashboard overview</h2>
+            <h3 class="title">
+        A snapshot of the whole dashboard in one view
+        <div class="image-container">
+            <img src="images\waves\Dashboard_overview.gif">
+        </div>
+    </h3>
+<!-- KPI OVERVIEW -->
+<section id="kpis">
+
+    <h2>Executive KPI overview</h2>
+
+    <h3 class="title">
+        A high-level performance snapshot, before drilling into causes
+    </h3>
+
+    <p class="body-text">
+        Four headline metrics anchor the dashboard: revenue, profit,
+        average order value and active customers, each benchmarked
+        against the prior year.
+    </p>
+<div class="image-container">
+            <img src="images\waves\Executive KPI.png">
+        </div>
+
+    <p class="chart-caption">
+        Note: The revenue figures above are carried over as recorded
+        in the source dashboard. The dollar values and the -49.11%
+        change don't fully reconcile arithmetically and are worth
+        re-checking against Power BI. Profit and active-customer
+        figures do check out.
+    </p>
+
+</section>
+
+
+<!-- COUNTRY -->
+<section id="country">
+
+    <h2>Revenue performance by country</h2>
+
+    <h3 class="title">
+        Every market declined — some far more than others
+    </h3>
+<div class="image-container">
+            <img src="images\waves\Revenue By Country.png">
+        </div>
+    <p class="body-text">
+        The United States remained the largest market by revenue,
+        but like every country in the portfolio, it was hit by the
+        year-over-year decline. Italy fared worst, while France held
+        up best relative to the rest of the business.
+    </p>
+
+
+</section>
+
+
+<!-- MONTHLY TREND -->
+<section id="trend">
+
+    <h2>Monthly revenue trend analysis</h2>
+
+    <h3 class="title">
+        The two years diverge sharply after April
+    </h3>
+<div class="image-container">
+            <img src="images\waves\Monthly revenue Trend.png">
+        </div>
+    <p class="body-text">
+        Revenue tracked a similar, softly declining path to the previous
+        year through the first quarter. From April onward, 2019 saw a
+        sharp recovery and climbed for the rest of the year — but 2020
+        never followed that pattern, staying flat instead of rebounding.
+    </p>
+
+   
+
+</section>
+
+
+<!-- MISSED REVENUE -->
+<section id="missed">
+
+    <h2>Missed revenue opportunity</h2>
+
+    <h3 class="title">
+        Thousands of product lines never sold a single unit
+    </h3>
+
+    <div class="image-container">
+            <img src="images\waves\Potential Losses.png">
+        </div>
+
+        <div class="desc">
+            Nearly 4,600 SKUs recorded no sales anywhere in the store
+            network for the full year — representing an estimated
+            $1.47M in potential revenue based on the dashboard's
+            opportunity calculation. This flags an assortment or
+            visibility problem worth investigating alongside the
+            broader revenue decline.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+
+    <h2>Top &amp; declining products</h2>
+
+    <h3 class="title">
+        Where revenue concentrated, and where it fell fastest
+    </h3>
+<div class="image-container">
+            <img src="images\waves\Top Perfroming products.png">
+        </div>
+    <p class="body-text">
+        This surfaces the five products generating the most
+        revenue alongside the five experiencing the sharpest
+        year-over-year decline.
+    </p>
+
+
+</section>
+
+
+<!-- KEY INSIGHTS -->
+<section id="insights">
+
+    <h2>Key insights</h2>
+
+    <h3 class="title">
+        What the numbers actually say about the decline
+    </h3>
+
+    <div class="insight-list">
+
+        <div class="highlight">
+
+                Revenue declined 49.11% YoY while profit fell 49.08%
+                YoY. The two moved almost in lockstep, meaning
+                profitability didn't deteriorate disproportionately
+                relative to sales; the drop was driven by volume,
+                not margin erosion.
+        </div>
+
+
+        <div class="highlight">
+
+        America remains the largest market. Italy posted a 56.60% YoY revenue decline the steepest of any market
+        while France's 31.54% decline was the smallest, making the decline fairly consistent across all markets.
+
+        </div>
+
+
+        <div class="highlight">
+
+                4,592 product lines generated zero revenue in 2020,
+                representing an estimated $1.47M in potential revenue
+                pointing to need for deeper analysis. 
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- METHODOLOGY -->
+<section id="method">
+
+    <h2>Appendix</h2>
+
+    <h3 class="title">
+        Data &amp; modelling
+    </h3>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <h4 class="phase">Data cleanup</h4>
+
+            <div class="txt">
+                Source data was an excel csv files and was was Cleaned Using POwer Query, unnecassary columns  not needed for analysis Removed.
+            </div>
+
+        </div>
+
+        <div class="step">
+
+            <h4 class="phase">Data model</h4>
+
+            <div class="txt">
+                Modelled the data into fact and dimension tables
+                using a star schema, to keep the model performant
+                and the DAX measures straightforward.
+            </div>
+        <div class="image-container">
+            <img src="images\waves\Model.png">
+        </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+         <div class="pfooter fade">
+      <div class="flinks">
+  
+        
+        <a class="fbtn" href="index.html">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </div>
+</footer>
+```
